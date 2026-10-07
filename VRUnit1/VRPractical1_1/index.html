@@ -3,40 +3,274 @@
 <head>
   <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
 </head>
+
 <body>
-  <a-scene>
-    <!-- Car body -->
-    <a-box position="0 1 -4"
-      width="3" height="1" depth="1.5"
-      color="#4CC3D9"></a-box>
-    <!-- Car top -->
-    <a-box position="0 1.7 -4"
-      width="1.8" height="0.5" depth="1.2"
-      color="#EF2D5E"></a-box>
-    <!-- 4 wheels -->
-    <a-cylinder position="-1 0.5 -3.4"
-      radius="0.4" height="0.3"
-      rotation="90 0 0"
-      color="black"></a-cylinder>
-    <a-cylinder position="1 0.5 -3.4"
-      radius="0.4" height="0.3"
-      rotation="90 0 0"
-      color="black"></a-cylinder>
-    <a-cylinder position="-1 0.5 -4.6"
-      radius="0.4" height="0.3"
-      rotation="90 0 0"
-      color="black"></a-cylinder>
-    <a-cylinder position="1 0.5 -4.6"
-      radius="0.4" height="0.3"
-      rotation="90 0 0"
-      color="black"></a-cylinder>
-    <!-- Ground -->
-    <a-plane position="0 0 -4"
-      rotation="-90 0 0"
-      width="10" height="10"
-      color="#7BC8A4"></a-plane>
-    <a-sky color="#ECECEC"></a-sky>
-    <a-camera position="0 1.4 5"></a-camera>
-  </a-scene>
+<a-scene>
+
+  <!-- BACKGROUND -->
+  <a-sky src="apan.jpg"></a-sky>
+
+  <!-- ROAD -->
+  <a-plane
+    position="0 0 -5"
+    rotation="-90 0 0"
+    width="30"
+    height="30"
+    src="fiji.jpg">
+  </a-plane>
+
+  <!-- CAR -->
+  <a-entity position="0 0 -5">
+
+    <!-- BODY -->
+    <a-box position="0 0.62 0"
+      width="4.5" height="0.7" depth="1.65"
+      color="#0755A0"></a-box>
+
+    <a-box position="0 0.35 0"
+      width="4.25" height="0.35" depth="1.75"
+      color="#063F7A"></a-box>
+
+    <!-- HOOD -->
+    <a-box position="1.55 0.92 0"
+      width="1.65" height="0.35" depth="1.55"
+      color="#0755A0"></a-box>
+
+    <!-- ROOF -->
+    <a-box position="-0.30 1.55 0"
+      width="2.05" height="0.14" depth="1.30"
+      color="#0755A0"></a-box>
+
+    <!-- FRONT ROOF POSTS -->
+    <a-box position="0.57 1.30 0.65"
+      width="0.10" height="0.52" depth="0.10"
+      rotation="0 0 -12" color="#0755A0"></a-box>
+
+    <a-box position="0.57 1.30 -0.65"
+      width="0.10" height="0.52" depth="0.10"
+      rotation="0 0 -12" color="#0755A0"></a-box>
+
+    <!-- BACK ROOF POSTS -->
+    <a-box position="-1.17 1.30 0.65"
+      width="0.10" height="0.52" depth="0.10"
+      rotation="0 0 12" color="#0755A0"></a-box>
+
+    <a-box position="-1.17 1.30 -0.65"
+      width="0.10" height="0.52" depth="0.10"
+      rotation="0 0 12" color="#0755A0"></a-box>
+
+    <!-- RIGHT SIDE WINDOW -->
+    <a-box
+      position="-0.30 1.28 0.655"
+      width="1.55" height="0.48" depth="0.025"
+      color="#8EDCF7"
+      opacity="0.45"
+      material="transparent: true; side: double">
+    </a-box>
+
+    <!-- LEFT SIDE WINDOW -->
+    <a-box
+      position="-0.30 1.28 -0.655"
+      width="1.55" height="0.48" depth="0.025"
+      color="#8EDCF7"
+      opacity="0.45"
+      material="transparent: true; side: double">
+    </a-box>
+
+    <!-- FRONT WINDSHIELD -->
+    <a-box
+      position="0.56 1.27 0"
+      width="0.035" height="0.52" depth="1.12"
+      rotation="0 0 -12"
+      color="#8EDCF7"
+      opacity="0.50"
+      material="transparent: true; side: double">
+    </a-box>
+
+    <!-- BACK WINDOW -->
+    <a-box
+      position="-1.16 1.27 0"
+      width="0.035" height="0.52" depth="1.12"
+      rotation="0 0 12"
+      color="#8EDCF7"
+      opacity="0.50"
+      material="transparent: true; side: double">
+    </a-box>
+
+    <!-- FRONT -->
+    <a-box position="2.27 0.66 0"
+      width="0.08" height="0.38" depth="1.05"
+      color="#111111"></a-box>
+
+    <a-box position="2.40 0.42 0"
+      width="0.18" height="0.18" depth="1.55"
+      color="#AAAAAA"></a-box>
+
+    <!-- HEADLIGHTS -->
+    <a-cylinder
+      position="2.43 0.82 0.53"
+      radius="0.21" height="0.07"
+      rotation="0 0 -90"
+      color="#FFFFDD"
+      material="emissive: #FFFFCC; emissiveIntensity: 0.7">
+    </a-cylinder>
+
+    <a-cylinder
+      position="2.43 0.82 -0.53"
+      radius="0.21" height="0.07"
+      rotation="0 0 -90"
+      color="#FFFFDD"
+      material="emissive: #FFFFCC; emissiveIntensity: 0.7">
+    </a-cylinder>
+
+    <!-- REAR -->
+    <a-box position="-2.28 0.55 0"
+      width="0.15" height="0.35" depth="1.5"
+      color="#222222"></a-box>
+
+    <a-box position="-2.36 0.78 0.55"
+      width="0.08" height="0.22" depth="0.25"
+      color="#CC0000"></a-box>
+
+    <a-box position="-2.36 0.78 -0.55"
+      width="0.08" height="0.22" depth="0.25"
+      color="#CC0000"></a-box>
+
+    <!-- FLAT SPOILER -->
+    <a-box
+      position="-2.38 1.08 0"
+      width="0.15" height="0.08" depth="1.75"
+      color="#111111"></a-box>
+
+    <a-box
+      position="-2.34 0.88 0.55"
+      width="0.08" height="0.40" depth="0.08"
+      color="#111111"></a-box>
+
+    <a-box
+      position="-2.34 0.88 -0.55"
+      width="0.08" height="0.40" depth="0.08"
+      color="#111111"></a-box>
+
+    <!-- WHEELS -->
+    <a-cylinder position="1.15 0.40 0.88"
+      radius="0.43" height="0.22"
+      rotation="90 0 0" color="#111111"></a-cylinder>
+
+    <a-cylinder position="1.15 0.40 -0.88"
+      radius="0.43" height="0.22"
+      rotation="90 0 0" color="#111111"></a-cylinder>
+
+    <a-cylinder position="-1.35 0.40 0.88"
+      radius="0.43" height="0.22"
+      rotation="90 0 0" color="#111111"></a-cylinder>
+
+    <a-cylinder position="-1.35 0.40 -0.88"
+      radius="0.43" height="0.22"
+      rotation="90 0 0" color="#111111"></a-cylinder>
+
+    <!-- RIMS -->
+    <a-cylinder position="1.15 0.40 1.01"
+      radius="0.23" height="0.035"
+      rotation="90 0 0" color="#BBBBBB"></a-cylinder>
+
+    <a-cylinder position="1.15 0.40 -1.01"
+      radius="0.23" height="0.035"
+      rotation="90 0 0" color="#BBBBBB"></a-cylinder>
+
+    <a-cylinder position="-1.35 0.40 1.01"
+      radius="0.23" height="0.035"
+      rotation="90 0 0" color="#BBBBBB"></a-cylinder>
+
+    <a-cylinder position="-1.35 0.40 -1.01"
+      radius="0.23" height="0.035"
+      rotation="90 0 0" color="#BBBBBB"></a-cylinder>
+
+    <!-- SIDE STRIPS -->
+    <a-box position="0 0.72 0.86"
+      width="3.3" height="0.07" depth="0.04"
+      color="#CCCCCC"></a-box>
+
+    <a-box position="0 0.72 -0.86"
+      width="3.3" height="0.07" depth="0.04"
+      color="#CCCCCC"></a-box>
+
+    <!-- DOORS -->
+    <a-box position="-0.45 0.78 0.87"
+      width="1.15" height="0.72" depth="0.04"
+      color="#0755A0"></a-box>
+
+    <a-box position="-0.45 0.78 -0.87"
+      width="1.15" height="0.72" depth="0.04"
+      color="#0755A0"></a-box>
+
+    <!-- DOOR HANDLES -->
+    <a-box position="-0.45 1.00 0.91"
+      width="0.30" height="0.06" depth="0.04"
+      color="#CCCCCC"></a-box>
+
+    <a-box position="-0.45 1.00 -0.91"
+      width="0.30" height="0.06" depth="0.04"
+      color="#CCCCCC"></a-box>
+
+
+    <!-- MERCEDES HOOD ORNAMENT -->
+    <!-- NO CIRCLE AT THE BOTTOM -->
+
+    <!-- STRAIGHT UPWARD STICK -->
+    <a-cylinder
+      position="2.20 1.43 0"
+      radius="0.035"
+      height="0.60"
+      color="#C0C0C0">
+    </a-cylinder>
+
+    <!-- MERCEDES STAR ON TOP -->
+    <a-box
+      position="2.20 1.76 0"
+      width="0.035"
+      height="0.32"
+      depth="0.035"
+      rotation="0 90 0"
+      color="#C0C0C0">
+    </a-box>
+
+    <a-box
+      position="2.20 1.76 0"
+      width="0.035"
+      height="0.32"
+      depth="0.035"
+      rotation="0 90 120"
+      color="#C0C0C0">
+    </a-box>
+
+    <a-box
+      position="2.20 1.76 0"
+      width="0.035"
+      height="0.32"
+      depth="0.035"
+      rotation="0 90 -120"
+      color="#C0C0C0">
+    </a-box>
+
+
+    <!-- LIGHTING -->
+    <a-light type="ambient" intensity="1.5"></a-light>
+
+    <a-light
+      type="directional"
+      position="5 8 5"
+      intensity="1.5">
+    </a-light>
+
+  </a-entity>
+
+  <!-- CAMERA -->
+  <a-camera
+    position="5 1.7 5"
+    look-at="0 0.8 -5">
+  </a-camera>
+
+</a-scene>
 </body>
 </html>
