@@ -23,7 +23,7 @@
   <a-entity position="0 0 -5">
 
     <!-- BODY -->
-    <a-box position="0 0.62 0"
+    <a-box id="carBody" position="0 0.62 0"
       width="4.5" height="0.7" depth="1.65"
       color="#0755A0"></a-box>
 
@@ -213,11 +213,8 @@
       width="0.30" height="0.06" depth="0.04"
       color="#CCCCCC"></a-box>
 
-
     <!-- MERCEDES HOOD ORNAMENT -->
-    <!-- NO CIRCLE AT THE BOTTOM -->
 
-    <!-- STRAIGHT UPWARD STICK -->
     <a-cylinder
       position="2.20 1.43 0"
       radius="0.035"
@@ -225,7 +222,7 @@
       color="#C0C0C0">
     </a-cylinder>
 
-    <!-- MERCEDES STAR ON TOP -->
+    <!-- MERCEDES STAR -->
     <a-box
       position="2.20 1.76 0"
       width="0.035"
@@ -253,7 +250,6 @@
       color="#C0C0C0">
     </a-box>
 
-
     <!-- LIGHTING -->
     <a-light type="ambient" intensity="1.5"></a-light>
 
@@ -272,5 +268,24 @@
   </a-camera>
 
 </a-scene>
+
+<!-- RANDOM CAR COLOR -->
+<script>
+  const colors = [
+    "#FF0000", // Red
+    "#00FF00", // Green
+    "#0000FF", // Blue
+    "#FFFF00", // Yellow
+    "#FF00FF", // Pink
+    "#00FFFF", // Cyan
+    "#FFA500", // Orange
+    "#800080"  // Purple
+  ];
+
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+  document.querySelector("#carBody").setAttribute("color", randomColor);
+</script>
+
 </body>
 </html>
