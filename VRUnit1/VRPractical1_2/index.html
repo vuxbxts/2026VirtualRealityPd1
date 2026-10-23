@@ -1,40 +1,912 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-entity class="plain_wall" position="0 0 0" rotation="0 0 0">
-        <a-entity class="plank" position="2 0 0">
-          <a-box position="0 0.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 1.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 2.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-        </a-entity>
-        <a-entity class="plank" position="1 0 0">
-          <a-box position="0 0.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 1.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 2.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-        </a-entity>
-        <a-entity class="plank" position="0 0 0">
-          <a-box position="0 0.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 1.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 2.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-        </a-entity>
-        <a-entity class="plank" position="-1 0 0">
-          <a-box position="0 0.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 1.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 2.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-        </a-entity>
-        <a-entity class="plank" position="-2 0 0">
-          <a-box position="0 0.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 1.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-          <a-box position="0 2.5 0" width="1" height="1" depth="0.1" src=""></a-box>
-        </a-entity>
-      </a-entity>
-      
-      <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
-      <a-camera position="0 1.4 5"></a-camera>
-    </a-scene>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <title>Big 3 Story Apartment City</title>
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+<a-scene>
+
+  <!-- BACKGROUND -->
+  <a-assets>
+    <img
+      id="cityBackground"
+      src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+  </a-assets>
+
+  <a-sky src="#cityBackground"></a-sky>
+
+
+  <!-- ============================= -->
+  <!-- BIG GREEN GROUND -->
+  <!-- ============================= -->
+
+  <a-plane
+    position="0 0 0"
+    rotation="-90 0 0"
+    width="200"
+    height="200"
+    color="#4f8f45">
+  </a-plane>
+
+
+  <!-- ============================= -->
+  <!-- MAIN ROADS -->
+  <!-- ============================= -->
+
+  <a-box
+    position="0 0.03 0"
+    width="200"
+    height="0.05"
+    depth="14"
+    color="#333333">
+  </a-box>
+
+  <a-box
+    position="0 0.04 -30"
+    width="200"
+    height="0.05"
+    depth="12"
+    color="#333333">
+  </a-box>
+
+  <a-box
+    position="0 0.04 30"
+    width="200"
+    height="0.05"
+    depth="12"
+    color="#333333">
+  </a-box>
+
+  <a-box
+    position="0 0.04 -60"
+    width="200"
+    height="0.05"
+    depth="12"
+    color="#333333">
+  </a-box>
+
+  <a-box
+    position="0 0.04 60"
+    width="200"
+    height="0.05"
+    depth="12"
+    color="#333333">
+  </a-box>
+
+
+  <!-- VERTICAL ROADS -->
+
+  <a-box
+    position="-60 0.04 0"
+    width="12"
+    height="0.05"
+    depth="200"
+    color="#333333">
+  </a-box>
+
+  <a-box
+    position="-30 0.04 0"
+    width="12"
+    height="0.05"
+    depth="200"
+    color="#333333">
+  </a-box>
+
+  <a-box
+    position="30 0.04 0"
+    width="12"
+    height="0.05"
+    depth="200"
+    color="#333333">
+  </a-box>
+
+  <a-box
+    position="60 0.04 0"
+    width="12"
+    height="0.05"
+    depth="200"
+    color="#333333">
+  </a-box>
+
+
+  <!-- ============================= -->
+  <!-- ROAD LINES -->
+  <!-- ============================= -->
+
+  <a-box
+    position="0 0.08 0"
+    width="200"
+    height="0.02"
+    depth="0.25"
+    color="#ffffff">
+  </a-box>
+
+  <a-box
+    position="0 0.08 -30"
+    width="200"
+    height="0.02"
+    depth="0.25"
+    color="#ffffff">
+  </a-box>
+
+  <a-box
+    position="0 0.08 30"
+    width="200"
+    height="0.02"
+    depth="0.25"
+    color="#ffffff">
+  </a-box>
+
+  <a-box
+    position="-60 0.08 0"
+    width="0.25"
+    height="0.02"
+    depth="200"
+    color="#ffffff">
+  </a-box>
+
+  <a-box
+    position="-30 0.08 0"
+    width="0.25"
+    height="0.02"
+    depth="200"
+    color="#ffffff">
+  </a-box>
+
+  <a-box
+    position="30 0.08 0"
+    width="0.25"
+    height="0.02"
+    depth="200"
+    color="#ffffff">
+  </a-box>
+
+  <a-box
+    position="60 0.08 0"
+    width="0.25"
+    height="0.02"
+    depth="200"
+    color="#ffffff">
+  </a-box>
+
+
+  <!-- ============================= -->
+  <!-- APARTMENT 1 -->
+  <!-- THREE BIG STACKED BOXES -->
+  <!-- ============================= -->
+
+  <a-box
+    position="-45 2 -45"
+    width="16"
+    height="4"
+    depth="12"
+    color="#d7a56d">
+  </a-box>
+
+  <a-box
+    position="-45 6 -45"
+    width="16"
+    height="4"
+    depth="12"
+    color="#c9905c">
+  </a-box>
+
+  <a-box
+    position="-45 10 -45"
+    width="16"
+    height="4"
+    depth="12"
+    color="#d7a56d">
+  </a-box>
+
+  <a-box
+    position="-45 12.15 -45"
+    width="16.5"
+    height="0.3"
+    depth="12.5"
+    color="#444444">
+  </a-box>
+
+  <!-- windows -->
+  <a-box position="-50 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <!-- balconies -->
+  <a-box position="-45 3.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 4.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 7.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 8.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 11.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 12.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <!-- ============================= -->
+  <!-- APARTMENT 2 -->
+  <!-- ============================= -->
+
+  <a-box position="-15 2 -45" width="16" height="4" depth="12" color="#b87950"></a-box>
+  <a-box position="-15 6 -45" width="16" height="4" depth="12" color="#c98d5d"></a-box>
+  <a-box position="-15 10 -45" width="16" height="4" depth="12" color="#b87950"></a-box>
+  <a-box position="-15 12.15 -45" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="-20 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-15 3.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 4.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 7.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 8.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 11.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 12.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <!-- ============================= -->
+  <!-- APARTMENT 3 -->
+  <!-- ============================= -->
+
+  <a-box position="15 2 -45" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 6 -45" width="16" height="4" depth="12" color="#bd8958"></a-box>
+  <a-box position="15 10 -45" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 12.15 -45" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="10 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="15 3.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 4.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 7.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 8.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 11.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 12.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <!-- ============================= -->
+  <!-- APARTMENT 4 -->
+  <!-- ============================= -->
+
+  <a-box position="45 2 -45" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 6 -45" width="16" height="4" depth="12" color="#c18459"></a-box>
+  <a-box position="45 10 -45" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 12.15 -45" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="40 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 1.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 5.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 9.7 -51.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="45 3.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 3.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 4.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 7.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 7.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 8.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 11.2 -52" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 11.8 -53" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 12.3 -53" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <!-- ============================= -->
+  <!-- SECOND ROW APARTMENTS -->
+  <!-- ============================= -->
+
+  <a-box position="-45 2 -15" width="16" height="4" depth="12" color="#c28a61"></a-box>
+  <a-box position="-45 6 -15" width="16" height="4" depth="12" color="#d19a68"></a-box>
+  <a-box position="-45 10 -15" width="16" height="4" depth="12" color="#c28a61"></a-box>
+  <a-box position="-45 12.15 -15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="-50 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-45 3.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 4.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 7.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 8.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 11.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 12.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="-15 2 -15" width="16" height="4" depth="12" color="#9d6c55"></a-box>
+  <a-box position="-15 6 -15" width="16" height="4" depth="12" color="#b97e59"></a-box>
+  <a-box position="-15 10 -15" width="16" height="4" depth="12" color="#9d6c55"></a-box>
+  <a-box position="-15 12.15 -15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="-20 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-15 3.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 4.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 7.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 8.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 11.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 12.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="15 2 -15" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 6 -15" width="16" height="4" depth="12" color="#bd8958"></a-box>
+  <a-box position="15 10 -15" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 12.15 -15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="10 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="15 3.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 4.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 7.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 8.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 11.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 12.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="45 2 -15" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 6 -15" width="16" height="4" depth="12" color="#c18459"></a-box>
+  <a-box position="45 10 -15" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 12.15 -15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="40 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 1.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 5.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 9.7 -21.1" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="45 3.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 3.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 4.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 7.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 7.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 8.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 11.2 -22" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 11.8 -23" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 12.3 -23" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <!-- ============================= -->
+  <!-- THIRD ROW -->
+  <!-- ============================= -->
+
+  <a-box position="-45 2 15" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="-45 6 15" width="16" height="4" depth="12" color="#bd8958"></a-box>
+  <a-box position="-45 10 15" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="-45 12.15 15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="-50 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-45 3.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 4.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 7.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 8.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 11.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 12.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="-15 2 15" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="-15 6 15" width="16" height="4" depth="12" color="#c18459"></a-box>
+  <a-box position="-15 10 15" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="-15 12.15 15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="-20 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-15 3.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 4.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 7.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 8.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 11.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 12.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="15 2 15" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 6 15" width="16" height="4" depth="12" color="#bd8958"></a-box>
+  <a-box position="15 10 15" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 12.15 15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="10 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="15 3.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 4.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 7.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 8.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 11.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 12.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="45 2 15" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 6 15" width="16" height="4" depth="12" color="#c18459"></a-box>
+  <a-box position="45 10 15" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 12.15 15" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="40 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 1.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 5.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 9.7 8.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="45 3.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 3.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 4.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 7.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 7.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 8.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 11.2 8" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 11.8 7" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 12.3 7" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <!-- ============================= -->
+  <!-- FOURTH ROW -->
+  <!-- ============================= -->
+
+  <a-box position="-45 2 45" width="16" height="4" depth="12" color="#c28a61"></a-box>
+  <a-box position="-45 6 45" width="16" height="4" depth="12" color="#d19a68"></a-box>
+  <a-box position="-45 10 45" width="16" height="4" depth="12" color="#c28a61"></a-box>
+  <a-box position="-45 12.15 45" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="-50 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-50 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-45 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-40 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-45 3.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 4.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 7.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 8.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-45 11.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-51 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-39 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-45 12.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="-15 2 45" width="16" height="4" depth="12" color="#9d6c55"></a-box>
+  <a-box position="-15 6 45" width="16" height="4" depth="12" color="#b97e59"></a-box>
+  <a-box position="-15 10 45" width="16" height="4" depth="12" color="#9d6c55"></a-box>
+  <a-box position="-15 12.15 45" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="-20 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-20 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-15 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="-10 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="-15 3.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 4.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 7.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 8.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="-15 11.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="-21 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-9 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="-15 12.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="15 2 45" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 6 45" width="16" height="4" depth="12" color="#bd8958"></a-box>
+  <a-box position="15 10 45" width="16" height="4" depth="12" color="#d0a16b"></a-box>
+  <a-box position="15 12.15 45" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="10 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="10 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="15 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="20 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="15 3.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 4.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 7.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 8.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="15 11.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="9 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="21 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="15 12.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <a-box position="45 2 45" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 6 45" width="16" height="4" depth="12" color="#c18459"></a-box>
+  <a-box position="45 10 45" width="16" height="4" depth="12" color="#a86f55"></a-box>
+  <a-box position="45 12.15 45" width="16.5" height="0.3" depth="12.5" color="#444444"></a-box>
+
+  <a-box position="40 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 1.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 5.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="40 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="45 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+  <a-box position="50 9.7 38.9" width="3" height="2" depth="0.2" color="#6ec6e8"></a-box>
+
+  <a-box position="45 3.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 3.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 4.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 7.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 7.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 8.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+  <a-box position="45 11.2 38" width="13" height="0.35" depth="2" color="#777777"></a-box>
+  <a-box position="39 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="51 11.8 37" width="0.25" height="1.2" depth="0.25" color="#444444"></a-box>
+  <a-box position="45 12.3 37" width="12" height="0.15" depth="0.15" color="#444444"></a-box>
+
+
+  <!-- ============================= -->
+  <!-- TREES - OUTSIDE APARTMENTS -->
+  <!-- NO TREES INSIDE BUILDINGS -->
+  <!-- ============================= -->
+
+  <a-cylinder position="-70 2 -70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-70 4.5 -70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-55 2 -70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-55 4.5 -70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-25 2 -70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-25 4.5 -70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="5 2 -70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="5 4.5 -70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="35 2 -70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="35 4.5 -70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="70 2 -70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="70 4.5 -70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-70 2 -35" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-70 4.5 -35" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-70 2 -5" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-70 4.5 -5" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-70 2 25" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-70 4.5 25" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-70 2 55" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-70 4.5 55" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-50 2 70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-50 4.5 70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="-20 2 70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="-20 4.5 70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="10 2 70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="10 4.5 70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="40 2 70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="40 4.5 70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="70 2 70" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="70 4.5 70" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="70 2 -35" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="70 4.5 -35" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="70 2 -5" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="70 4.5 -5" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="70 2 25" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="70 4.5 25" radius="2.5" color="#277a35"></a-sphere>
+
+  <a-cylinder position="70 2 55" radius="0.7" height="4" color="#654321"></a-cylinder>
+  <a-sphere position="70 4.5 55" radius="2.5" color="#277a35"></a-sphere>
+
+
+  <!-- ============================= -->
+  <!-- STREET LIGHTS -->
+  <!-- ============================= -->
+
+  <a-cylinder position="-8 3 0" radius="0.15" height="6" color="#222222"></a-cylinder>
+  <a-sphere position="-8 6.2 0" radius="0.4" color="#ffffcc"></a-sphere>
+
+  <a-cylinder position="8 3 0" radius="0.15" height="6" color="#222222"></a-cylinder>
+  <a-sphere position="8 6.2 0" radius="0.4" color="#ffffcc"></a-sphere>
+
+  <a-cylinder position="-8 3 -30" radius="0.15" height="6" color="#222222"></a-cylinder>
+  <a-sphere position="-8 6.2 -30" radius="0.4" color="#ffffcc"></a-sphere>
+
+  <a-cylinder position="8 3 -30" radius="0.15" height="6" color="#222222"></a-cylinder>
+  <a-sphere position="8 6.2 -30" radius="0.4" color="#ffffcc"></a-sphere>
+
+  <a-cylinder position="-8 3 30" radius="0.15" height="6" color="#222222"></a-cylinder>
+  <a-sphere position="-8 6.2 30" radius="0.4" color="#ffffcc"></a-sphere>
+
+  <a-cylinder position="8 3 30" radius="0.15" height="6" color="#222222"></a-cylinder>
+  <a-sphere position="8 6.2 30" radius="0.4" color="#ffffcc"></a-sphere>
+
+
+  <!-- ============================= -->
+  <!-- CAMERA -->
+  <!-- ============================= -->
+
+  <a-entity
+    position="0 7 90"
+    rotation="0 180 0">
+
+    <a-camera></a-camera>
+
+  </a-entity>
+
+</a-scene>
+
+</body>
 </html>
